@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    {% block preneighbourhood %} {% endblock %}
+    {% block neighbourhood_content %} {% endblock %}
+    {% block postneighbourhood %} {% endblock %}
+  </div>
+</div>
+
+{% endblock %}
