@@ -23,3 +23,13 @@ class Neighbourhood(models.Model):
 
     class Meta:
         ordering = ['name']
+
+class NeighbourhoodMember(models.Model):
+    neighbourhood = models.ForeignKey(Neighbourhood, related_name='memberships')
+    user = models.ForeignKey(User, related_name='user_neighbourhoods')
+
+    def __str__(self):
+        return self.user.username
+
+    class Meta:
+        unique_together = ('neighbourhood', 'user')
