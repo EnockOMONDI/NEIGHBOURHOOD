@@ -1,41 +1,30 @@
 from django.db import models
-from django.utils.text import slugify
-from django import template
-from django.contrib.auth import get_user_model
 from django.core.urlresolvers import reverse
+from django.conf import settings
+from neighbourhoods.models import Neighbourhood
+from django.contrib.auth import get_user_model
 
 
 # Create your models here.
 User = get_user_model()
-reigster = template.Library
 
 
-class Neighbourhood(models.Model):
-    name = models.CharField(max_length=140, unique=True)
-    slug = models.SlugField(allow_unicode=True,  unique=True)
-    location = models.CharField(max_length=140, blank=True, default='')
-    occupants = models.ManyToManyField(User, through='NeighbourhoodMember')
+class Business(models.Model):
+    user = models.ForeignKey(User, related_name="businesses")
+    created_at = models.DateTimeField(auto_now=True)
+    business_name = models.CharField(max_length=140, blank=True, null=True)
+    business_email = models.EmailField(max_length=70, blank=True)
+    neighbourhood = models.ForeignKey(Neighbourhood, related_name='businesses', null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.business_name
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('neighbourhoods:single', kwargs={'slug': self.slug})
+        return reverse('posts:single', kwargs={'username': self.user.username, 'pk': self.pk})
 
     class Meta:
-        ordering = ['name']
-
-
-class NeighbourhoodMember(models.Model):
-    neighbourhood = models.ForeignKey(Neighbourhood, related_name='memberships')
-    user = models.ForeignKey(User, related_name='user_neighbourhoods')
-
-    def __str__(self):
-        return self.user.username
-
-    class Meta:
-        unique_together = ('neighbourhood', 'user')
+        ordering = ['-created_at']
+        unique_together = ['user', 'business_name']
