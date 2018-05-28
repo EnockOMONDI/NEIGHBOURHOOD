@@ -1,0 +1,24 @@
+{% extends "posts/post_base.html" %}
+{% load bootstrap4 %}
+{% block post_content %}
+<div class="container mt-5 mb-3">
+  <div class="row">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <h5 class="card-header text-center">Create New Business</h5>
+        <div class="card-body">
+          <form action="{% url 'posts:create'%}" method="post">
+            {% csrf_token %} {% bootstrap_form form %}
+            <input type="submit" class="btn btn-success" value="Post">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+    </div>
+  </div>
+</div>
+{% endblock %}
