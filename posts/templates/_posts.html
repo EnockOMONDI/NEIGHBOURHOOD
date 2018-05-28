@@ -1,0 +1,12 @@
+<div class="post">
+  <p>Business name : {{business.business_name}}</p>
+  <p>Business Email : {{business.business_email}}</p>
+  <p><strong>Owner : {{business.user.username}}</strong></p>
+  <a href="{% url 'posts:for_user' username=business.user.username %}"></a>
+  <time><a href="{% url 'posts:single' username=business.user.username pk=business.pk %}"></a></time>
+  <div class="content">
+    {% if user.is_authenticated and business.user == user %}
+    <a href="{% url 'posts:delete' pk=business.pk %}" title="delete">Delete</a>
+    {% endif %}
+  </div>
+</div>
