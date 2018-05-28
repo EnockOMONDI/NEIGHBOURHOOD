@@ -31,10 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
-    'neighbourhoodapp'
-    'posts'
-    'bootstrap4'
+    'neighbourhoodapp',
+    'posts',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
