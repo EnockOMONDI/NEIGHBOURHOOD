@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.conf import settings
-from neighbourhoods.models import Neighbourhood
+from neighbourhoodapp.models import Neighbourhood
 from django.contrib.auth import get_user_model
 
 
