@@ -1,0 +1,24 @@
+{% extends "posts/post_base.html" %} {% block pre_post_content %} {% if request.user.is_authenticated %}
+<div class="col-md-6">
+  <div class="card">
+    <div class="content">
+      <h5>Your Neighbourhoods</h5> {% for member_neighbourhood in ger_user_neighbourhoods %}
+      <a href="{% url 'neighbourhoods:single' slug=member_neighbourhood.neighbourhood.slug %}"></a> {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  <div class="card">
+    <div class="content">
+      <h5>Neighbourhoods</h5> {% for other_neighbourhood in get_other_neighbourhoods %}
+      <a href="{% url 'neighbourhoods:single' slug=other_neighbourhood.slug %}"></a> {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block post_content %}
+<div class="col-md-6">
+  {% for business in business_list %} {% include "posts/_post.html" %} {% endfor %}
+
+</div>
+
+{% endblock %}
