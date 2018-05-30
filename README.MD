@@ -53,5 +53,13 @@ run python3.6 manage.py runserver to run app on local server
 ###### Deployment
 * HEROKU
 
+### KNOWN BUGS
+- no known bugs
+
+### Meta
+-Feel free to add features (just fork it)
+Incase of any queries, email me at -(djseanizellkenya@gmail.com)
+<br>
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
