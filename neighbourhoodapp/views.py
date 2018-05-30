@@ -24,7 +24,7 @@ class ListNeighbourhoods(generic.ListView):
 
 class JoinNeighbourhood(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('neighbourhoods:single', kwargs={'slug': self.kwargs.get('slug')})
+        return reverse('neighbourhoodapp:single', kwargs={'slug': self.kwargs.get('slug')})
 
     def get(self, request, *args, **kwargs):
         neighbourhood = get_object_or_404(Neighbourhood, slug=self.kwargs.get('slug'))
@@ -32,25 +32,25 @@ class JoinNeighbourhood(LoginRequiredMixin, generic.RedirectView):
         try:
             NeighbourhoodMember.objects.create(user=self.request.user, neighbourhood=neighbourhood)
         except IntegrityError:
-            messages.warning(self.request, 'Warning already a member!')
+            messages.warning(self.request, ' already a member!')
         else:
-            messages.success(self.request, 'You are now a member!')
+            messages.success(self.request, 'welcome to the community!')
 
         return super().get(request, *args, **kwargs)
 
 
 class LeaveNeighbourhood(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
-        return reverse('neighbourhoods:single', kwargs={'slug': self.kwargs.get('slug')})
+        return reverse('neighbourhoodapp:single', kwargs={'slug': self.kwargs.get('slug')})
 
     def get(self, request, *args, **kwargs):
 
         try:
             membership = NeighbourhoodMember.objects.filter(user=self.request.user, neighbourhood__slug=self.kwargs.get('slug')).get()
         except NeighbourhoodMember.DoesNotExist:
-            messages.warning(self.request, 'Sorry your are not a resident here!')
+            messages.warning(self.request, ' bummer looks like your are not a resident here!')
         else:
             membership.delete()
-            messages.success(self.request, 'You are no longer a resident!')
+            messages.success(self.request, 'bummer looks like you are not a member!')
 
         return super().get(request, *args, **kwargs)

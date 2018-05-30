@@ -1,4 +1,5 @@
-<!DOCTYPE html> {% load staticfiles %}
+<!DOCTYPE html>
+{% load static %}
 <html>
 
 <head>
@@ -7,40 +8,44 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <!--<link rel="stylesheet" href="{% static 'hoodwatch/css/master.css'%}"> -->
+
+  <!-- Compiled and minified CSS -->
+  <!-- I like to use this because it modifies the bootstrap theme-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
   <title>Neighbourhood</title>
 </head>
 
 <body>
+<nav class="navbar navbar-dark" style="background-color:#293344;">
+     <a class="navbar-brand" href="{% url 'home' %}">
+       <img src="{% static 'images/home1.png' %}" width="50" height="50" class="d-inline-block align-top" alt="">WELCOME
+     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      {% if user.is_authenticated %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}">
-      <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">
-      Our Neighbourhood
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav  ml-auto mr-5 pr-3">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            {% if user.is_authenticated %}
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'neighbourhoodapp:all' %} " style="background-color:#293344;">Neighbourhoods<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'neighbourhoodapp:create' %}"  style="background-color:#293344;">Enter  Neighbourhood</a>
+      <a class="nav-item nav-link"  href="{% url 'posts:create' %}"  style="background-color:#293344;">Enter a Business</a>
+      <a class="nav-item nav-link disabled"  href="{% url 'accounts:logout' %}"  style="background-color:#111721; ">Log Out</a> {% else %}
+      <a class="nav-item nav-link disabled"  href="{% url 'neighbourhoodapp:all' %}" style="background-color:#293344;" >Neighbourhoods</a>
+      <form class="form-inline" role="search" action="">
+    <div class="input-group">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search "  aria-label="Search">
 
-            <a class="dropdown-item" href="{% url 'neighbourhoodapp:all' %}">Neighbourhoods</a>
-            <a class="dropdown-item" href="{% url 'neighbourhoodapp:create' %}">Enter  Neighbourhood</a>
-            <a class="dropdown-item" href="{% url 'posts:create' %}">Enter a Business</a>
-            <a class="dropdown-item" href="{% url 'accounts:logout' %}">Log Out</a> {% else %}
-            <a class="dropdown-item" href="{% url 'neighbourhoodapp:all' %}">Neighbourhoods</a>
-           {% endif %}
-          </div>
-        </li>
-      </ul>
     </div>
-  </nav>
+  </form>
+
+         {% endif %}
+    </div>
+  </div>
+</nav>
+
+
   {% block content %} {% endblock %}
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

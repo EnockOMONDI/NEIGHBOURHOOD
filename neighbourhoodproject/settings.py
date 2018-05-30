@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE =  'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -128,6 +128,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'accounts/login'

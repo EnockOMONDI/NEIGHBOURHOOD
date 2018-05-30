@@ -1,14 +1,16 @@
-{% extends "neighbourhoods/neighbourhood_base.html" %} {% load bootstrap4 %} {% block neighbourhood_content %}
-<div class="container mt-5 mb-3">
+{% extends "neighbourhoodapp/neighbourhood_base.html" %}
+{% load bootstrap4 %}
+{% block neighbourhood_content %}
+<div class="container mt-5 mb-6">
   <div class="row">
     <div class="col-md-1">
 
     </div>
     <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 28rem;">
         <h5 class="card-header text-center"> New Neighbourhood</h5>
         <div class="card-body">
-          <form action="{% url 'neighbourhoods:create'%}" method="post">
+          <form action="{% url 'neighbourhoodapp:create'%}" method="post">
             {% csrf_token %} {% bootstrap_form form %}
             <input type="submit" class="btn btn-success" value="Create">
           </form>

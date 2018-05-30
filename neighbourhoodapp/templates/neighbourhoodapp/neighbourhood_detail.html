@@ -1,13 +1,13 @@
-{% extends "neighbourhoods/neighbourhood_base.html" %}
+{% extends "neighbourhoodapp/neighbourhood_base.html" %}
 {% block preneighbourhood %}
-<div class="card mt-3" style="width: 18rem;">
+<div class="card mt-3" style="width: 28rem;">
   <div class="card-body">
     <h5 class="card-title">{{neighbourhood.name}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Occupant Count: {{neighbourhood.occupants.count}}</h6>
     {% if user in neighbourhood.occupants.all %}
-    <a href="{% url 'neighbourhoods:leave' slug=neighbourhood.slug %}" class="card-link"> <i class="fa fa-sign-out"></i> Leave</a>
+    <a href="{% url 'neighbourhoodapp:leave' slug=neighbourhood.slug %}" class="waves-effect waves-light btn">Leave Neighbourhood</a>
     {% else %}
-    <a href="{% url 'neighbourhoods:join' slug=neighbourhood.slug %}" class="card-link"> <i class="fa fa-sign-in"></i> Join</a>
+    <a href="{% url 'neighbourhoodapp:join' slug=neighbourhood.slug %}" class="waves-effect waves-light btn">join Neighbourhood</a>
     {% endif %}
   </div>
 </div>
