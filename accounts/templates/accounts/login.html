@@ -8,17 +8,18 @@
     </div>
     <div class="col-md-4">
       <div class="card" style="width: 28rem;">
-        <h5 class="card-header text-center">Log In</h5>
+        <h5 class="card-header text-center"> We are Happy you are here</h5>
         <div class="card-body">
+
           <form method="POST">
             {% csrf_token %} {% bootstrap_form form %}
-            <input type="submit" class="btn btn-success" value="Login">
+            <input type="submit" class="btn btn-dark" value="Login" style="color #181630">
           </form>
         </div>
       </div>
       <div class="card mt-4" style="width: 28rem;">
         <div class="card-body">
-          <p class="textsize text-center">Don't have an account? <a href="{% url 'accounts:signup' %}" class="card-link"> Sign Up</a></p>
+          <p class="textsize text-center">Don't have an account? <a href="{% url 'accounts:signup' %}" class="card-link"> Join Us</a></p>
         </div>
       </div>
     </div>

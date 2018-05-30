@@ -15,7 +15,10 @@ h5{
   text-align: center;
   color: #181630;
 }
-
+p{
+  font-weight: bold;
+  font-family: sans-serif;
+}
 body {
     background: #eee;
   }
@@ -29,6 +32,6 @@ body {
    -webkit-box-align: center;
        -ms-flex-align: center;
            align-items: center;
-   padding: 50px;
+   padding: 40px;
    border-bottom: 8px solid #ddd;
    background:#181630;

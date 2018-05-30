@@ -3,11 +3,13 @@
 <div class="row mt-3">
   <div class="col-md-7">
     {% if user.is_authenticated %}
-      <p> <a href="{% url 'posts:for_user' username=user.username%}">@{{user.username}}</a> {% endif %}<br/> Welcome </p>
+      <p>welcome <a href="{% url 'posts:for_user' username=user.username%}">{{user.username}}</a> {% endif %}</p>
     {% if user.is_authenticated%}
-    <a href="{% url 'neighbourhoodapp:create' %}">Create Neighbourhood</a> {% endif %}
+    <a  href="{% url 'neighbourhoodapp:create' %}"class="waves-effect waves-light btn"><i class="material-icons left">add_circle</i>Create Neighbourhood</a></h4>
+{% endif %}
   </div>
-  {% endblock %} {% block neighbourhood_content %}
+  {% endblock %}
+ {% block neighbourhood_content %}
   <div class="col-md-12">
     <div class="row">
       {% for neighbourhood in object_list %}
