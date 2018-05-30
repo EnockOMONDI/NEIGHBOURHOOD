@@ -1,0 +1,7 @@
+Django==1.11
+django-appconf==1.0.2
+django-bootstrap4==0.0.6
+django-braces==1.13.0
+django-user-accounts==2.0.3
+psycopg2==2.7.4
+pytz==2018.4

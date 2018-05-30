@@ -44,8 +44,8 @@ run python3.6 manage.py runserver to run app on local server
 
 ## Built With
 
-* Django - The web framework used
-* Python - Language
+* Django - The back end web framework used
+* Python - backend technology
 * materialize- Used for frontend
 * Postgresql-Database
 * Bootstrap4 - used for frontend
