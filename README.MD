@@ -1,4 +1,6 @@
+![NEIGHBOURHOODWATCH](neighbourhoor.png)
 # NEIGHBOURHOODWATCH
+
 
 This is a neighbourhood application that users can find businesses in their neighborhood. Find Contact Information for the health department and Police authorities near their neighborhood and also create Posts that will be visible to everyone in their neighborhood
 ## BY
