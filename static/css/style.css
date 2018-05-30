@@ -3,7 +3,7 @@
 h1{
   padding-top: 100px;
   text-align: center;
-  color: #59c9f9;
+  color: 	#181630;
   font-weight: bold;
 
 }
@@ -13,7 +13,7 @@ h4{
 }
 h5{
   text-align: center;
-  color: #59c9f9;
+  color: #181630;
 }
 
 body {
@@ -31,4 +31,4 @@ body {
            align-items: center;
    padding: 50px;
    border-bottom: 8px solid #ddd;
-   background:#1B8ADB;
+   background:#181630;
