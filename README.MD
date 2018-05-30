@@ -5,7 +5,7 @@
 This is a neighbourhood application that users can find businesses in their neighborhood. Find Contact Information for the health department and Police authorities near their neighborhood and also create Posts that will be visible to everyone in their neighborhood
 ## BY
 
-Enock OMONDI
+****Enock OMONDI****
 
 ## Installation
 `$ pip install -r requirements.txt`
@@ -50,7 +50,8 @@ run python3.6 manage.py runserver to run app on local server
 * Postgresql-Database
 * Bootstrap4 - used for frontend
 
-
+###### Deployment
+* HEROKU
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
