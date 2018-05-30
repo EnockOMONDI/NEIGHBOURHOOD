@@ -21,18 +21,18 @@
      <a class="navbar-brand" href="{% url 'home' %}">
        <img src="{% static 'images/home2.png' %}" width="100" height="100" alt=" NEIGHBOURHOOD WATCH">NEIGHBOURHOOD WATCH
      </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"   style="background-color:#001f3f;" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       {% if user.is_authenticated %}
 
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="{% url 'neighbourhoodapp:all' %} " style="background-color:#293344;">Neighbourhoods<span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="{% url 'neighbourhoodapp:create' %}"  style="background-color:#293344;">Enter  Neighbourhood</a>
-      <a class="nav-item nav-link"  href="{% url 'posts:create' %}"  style="background-color:#293344;">Enter a Business</a>
-      <a class="nav-item nav-link disabled"  href="{% url 'accounts:logout' %}"  style="background-color:#111721; ">Log Out</a> {% else %}
-      <a class="nav-item nav-link disabled"  href="{% url 'neighbourhoodapp:all' %}" style="background-color:#293344;" >Neighbourhoods</a>
+      <a class="nav-item nav-link active" href="{% url 'neighbourhoodapp:all' %} " style="background-color:	#001f3f;">Neighbourhoods<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'neighbourhoodapp:create' %}"  style="background-color:	#001f3f;">Enter  Neighbourhood</a>
+      <a class="nav-item nav-link"  href="{% url 'posts:create' %}"  style="background-color:	#001f3f;">Enter a Business</a>
+      <a class="nav-item nav-link disabled"  href="{% url 'accounts:logout' %}"  style="background-color:	#001f3f; ">Log Out</a> {% else %}
+      <a class="nav-item nav-link disabled"  href="{% url 'neighbourhoodapp:all' %}" style="background-color:	#001f3f;" >Neighbourhoods</a>
       <form class="form-inline" role="search" action="">
     <div class="input-group">
       <input class="form-control mr-sm-2" type="text" placeholder="Search "  aria-label="Search">

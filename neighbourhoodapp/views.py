@@ -21,7 +21,9 @@ class SingleNeighbourhood(generic.DetailView):
 class ListNeighbourhoods(generic.ListView):
     model = Neighbourhood
 
-
+'''
+    This view function will enable new users join a given neighbourhood
+'''
 class JoinNeighbourhood(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse('neighbourhoodapp:single', kwargs={'slug': self.kwargs.get('slug')})
@@ -38,7 +40,9 @@ class JoinNeighbourhood(LoginRequiredMixin, generic.RedirectView):
 
         return super().get(request, *args, **kwargs)
 
-
+'''
+    This view function will eneble users to exit a neighborhood
+'''
 class LeaveNeighbourhood(LoginRequiredMixin, generic.RedirectView):
     def get_redirect_url(self, *args, **kwargs):
         return reverse('neighbourhoodapp:single', kwargs={'slug': self.kwargs.get('slug')})
@@ -54,3 +58,4 @@ class LeaveNeighbourhood(LoginRequiredMixin, generic.RedirectView):
             messages.success(self.request, 'bummer looks like you are not a member!')
 
         return super().get(request, *args, **kwargs)
+        
