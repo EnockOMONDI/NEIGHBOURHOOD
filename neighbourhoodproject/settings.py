@@ -38,7 +38,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
 
     'neighbourhoodapp',
-    'python-decouple',
     'accounts',
     'posts',
     'bootstrap4',
