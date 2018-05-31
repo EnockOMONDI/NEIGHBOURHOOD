@@ -25,7 +25,7 @@ body {
 
 
 }
-  .navbar {
+  .navbar-dark {
    display: -webkit-box;
    display: -ms-flexbox;
    display: flex;
@@ -37,4 +37,5 @@ body {
            align-items: center;
    padding: 40px;
    border-bottom: 8px solid #ddd;
-   background:#181630;
+   background:#181630 !important;
+}
