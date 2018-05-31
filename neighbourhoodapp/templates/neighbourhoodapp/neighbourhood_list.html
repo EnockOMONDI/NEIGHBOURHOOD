@@ -18,8 +18,8 @@
           <div class="card-body">
             <h5 class="card-title"><a href="{% url 'neighbourhoodapp:single' slug=neighbourhood.slug %}">{{neighbourhood.name}}</a></h5>
             <h6 class="card-subtitle mb-2 text-muted">{{neighbourhood.location}}</h6>
-            <p class="card-text"><span class="badge badge-secondary">{{neighbourhood.occupants.count}}</span> occupant{{neighbourhood.occupants.count|pluralize}}</p>
-            <p class="card-text"><span class="badge badge-secondary">{{neighbourhood.businesses.count}}</span> business{{neighbourhood.businesses.count|pluralize}}</p>
+            <p class="card-text"><span class="card-subtitle mb-2 text-muted">{{neighbourhood.occupants.count}}</span> occupant{{neighbourhood.occupants.count|pluralize}}</p>
+            <p class="card-text"><span class="card-subtitle mb-2 text-muted">{{neighbourhood.businesses.count}}</span> business{{neighbourhood.businesses.count|pluralize}}</p>
           </div>
         </div>
       </div>
