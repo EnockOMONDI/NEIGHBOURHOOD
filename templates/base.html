@@ -32,11 +32,11 @@
 
    {% if user.is_authenticated %}
     <div class="navbar-nav"  >
-      <a style="color:black;" class="nav-item nav-link active" href="{% url 'neighbourhoodapp:all' %} "  >Neighbourhoods</a>
-      <a style="color:black;"class="nav-item nav-link active" href="{% url 'neighbourhoodapp:create' %}"  >Enter  Neighbourhood</a>
-      <a style="color:black;"class="nav-item nav-link active"  href="{% url 'posts:create' %}"  >Enter a Business</a>
-      <a style="color:black;"class="nav-item nav-link active"  href="{% url 'accounts:logout' %}"  >Log Out</a> {% else %}
-      <a style="color:black;"class="nav-item nav-link disabled"  href="{% url 'neighbourhoodapp:all' %}" >Neighbourhoods</a>
+      <a style="color:white;" class="waves-effect waves-light btn" href="{% url 'neighbourhoodapp:all' %} "  >Neighbourhoods</a>
+      <a style="color:white;"class="waves-effect waves-light btn" href="{% url 'neighbourhoodapp:create' %}"  >Enter  Neighbourhood</a>
+      <a style="color:white;"class="waves-effect waves-light btn"  href="{% url 'posts:create' %}"  >Enter a Business</a>
+      <a style="color:white;"class="waves-effect waves-light btn" href="{% url 'accounts:logout' %}"  >Log Out</a> {% else %}
+      <a style="color:white;"class="waves-effect waves-light btn"  href="{% url 'neighbourhoodapp:all' %}" >Neighbourhoods</a>
 
 
          {% endif %}
